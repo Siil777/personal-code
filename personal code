@@ -1,3 +1,32 @@
+Option.1
+
+while True:
+    f=input('code:')
+    if len(f)==11:
+        try:
+            date=f[5]+f[6]
+            month=f[4]+f[3]
+            if f[0]=='1' or f[0]=='2':
+                century='18'
+            elif f[0]=='3' or f[0]=='4':
+                century='19'
+            else:
+                century='20'
+            year=century+f[1]+f[2]
+            print('bithday',f,'s',date+'.'+month+'.'+year)
+            if f[0]=='1' or f[0]=='3' or f[0]=='5':
+                print('man')
+            else:
+                print('woman')
+        except:
+            print("")
+    else:
+        print('it requires no more 11 symbols')
+
+
+
+Option.2
+
 while True:
    c=input('enter personal indetefication code:')
    if len(c)==11:
