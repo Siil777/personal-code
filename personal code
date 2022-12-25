@@ -1,62 +1,62 @@
 while True:
-    c=input('enter indetefication code:')
-    if len(c)==11:
-        try:
-            date=c[5]+c[6]
-            month=c[3]+c[4]
-            if c[0]=='1' or c[0]=='2':
-                y='18'
-            elif c[0]=='3' or c[0]=='4':
-                y='19'
-            else:
-                y='20'
-            year=y+c[1]+c[2]
-            print('birthday',c,'is',date+'.'+month+'.'+year)
-            if c[0]=='2' or c[0]=='4' or c[0]=='6':
-                print('person gender: woman')
-            elif c[0]=='1' or c[0]=='3' or c[0]=='5':
-                print('person gender: man')
-            else:
-                year=y+int(c[1]+c[2])
-                month=int(c[3]+c[4])
-                day=int(c[5]+c[6])
-            s=0
-            n3=0
-            for i in range(10):
-                n3+=(i%9+1)*int(c[i])
-                s+=(i%9+1)*int(c[i])
-                s=s-(s//11)*11
-            print('last num',s)
-            print('check total',n3,'place of birth:')
-            if n3>1 and n3<=10:
-                hospital="Kuresare"
-            elif n3>10 and n3<=19:
-                hospital="Tartu"
-            elif n3>19 and n3<=220:
-                hospital="Ida-Tallinna Keskhaigla, Pelgulinna sunnitusmaja, Hiiumaa, Keila, Rapla haigla, Loksa haigla"
-            elif n3>220 and n3<=270:
-                hospital=" Ida-Viru Keskhaigla (Kohtla-Jarve, endine Johvi)"
-            elif n3>270 and n3<=370:
-                hospital="Maarjamoisa Kliinikum (Tartu), Jogeva Haigla"
-            elif n3>370 and n3<=420:
-                hospital="Narva hospital"
-            elif n3>420 and n3<=470:
-                hospital="Parnu hospital"
-            elif n3>470 and n3<=490:
-                hospital="Pelgulinna Sunnitusmaja (Tallinn), Haapsalu haigla"
-            elif n3>490 and n3<=520:
-                hospital=" Jarvamaa Haigla (Paide)"
-            elif n3>520 and n3<=570:
-                hospital="Rakvere, Tapa haigla"
-            elif n3>570 and n3<=600:
-                hospital="Valga hospital"
-            elif n3>600 and n3<=650:
-                hospital="Viljandi hospital"
-            elif n3>650 and n3<=700:
-                hospital="Louna-Eesti Haigla (Voru), Polva Haigla"
-            print(hospital)
-        except:
+   c=input('enter personal indetefication code:')
+   if len(c)==11:
+       try:
+           c_list=list(c)
+           if int(c_list[0]) in [1,2,3,4,5,6]:
+               if int(c_list[0]) in [1,2]:
+                   y='18'
+               if int(c_list[0]) in [3,4]:
+                   y='19'
+               if int(c_list[0]) in [5,6]:
+                   y='20'
+               else:
+                   year=y+(c_list[1]+c_list[2])
+                   month=int(c_list[3]+c_list[4])
+                   day=int(c_list[5]+c_list[6])
+                   print('birthday',c,'is',day,'/',month,'/',year)
+               s=0
+               n3=0
+               for i in range(0,10):
+                   s+=(i%9+1)*int(c_list[i])
+                   s+=(i%9+1)*int(c_list[i])
+                   s=s-(s//11)*11
+               print('last num',s)
+               print('check total',n3,'place of birth:')
+               if n3>1 and n3<=10:
+                    hospital="Kuresare"
+               elif n3>10 and n3<=19:
+                    hospital="Tartu"
+               elif n3>19 and n3<=220:
+                    hospital="Ida-Tallinna Keskhaigla, Pelgulinna sunnitusmaja, Hiiumaa, Keila, Rapla haigla, Loksa haigla"
+               elif n3>220 and n3<=270:
+                    hospital=" Ida-Viru Keskhaigla (Kohtla-Jarve, endine Johvi)"
+               elif n3>270 and n3<=370:
+                    hospital="Maarjamoisa Kliinikum (Tartu), Jogeva Haigla"
+               elif n3>370 and n3<=420:
+                    hospital="Narva hospital"
+               elif n3>420 and n3<=470:
+                    hospital="Parnu hospital"
+               elif n3>470 and n3<=490:
+                    hospital="Pelgulinna Sunnitusmaja (Tallinn), Haapsalu haigla"
+               elif n3>490 and n3<=520:
+                    hospital=" Jarvamaa Haigla (Paide)"
+               elif n3>520 and n3<=570:
+                    hospital="Rakvere, Tapa haigla"
+               elif n3>570 and n3<=600:
+                    hospital="Valga hospital"
+               elif n3>600 and n3<=650:
+                    hospital="Viljandi hospital"
+               elif n3>650 and n3<=700:
+                    hospital="Louna-Eesti Haigla (Voru), Polva Haigla"
+               print(hospital)
+               if c_list[0]=='2' or c_list[0]=='4' or c_list[0]=='6':
+                   sugu="gender of a person: woman"
+               else:
+                   sugu="gender of a person: man"
+               print(sugu)
+       except:
             print('')
-    else:
+   else:
         print('incorrect num of symbols')
   
