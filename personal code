@@ -47,7 +47,7 @@ while True:
                s=0
                n3=0
                for i in range(0,10):
-                   s+=(i%9+1)*int(c_list[i])
+                   n3+=(i%9+1)*int(c_list[i])
                    s+=(i%9+1)*int(c_list[i])
                    s=s-(s//11)*11
                print('last num',s)
