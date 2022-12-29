@@ -28,7 +28,7 @@ while True:
 Option.2
 
 while True:
-   c=input('enter personal indetefication code:')
+   c=input('enter personal identification code:')
    if len(c)==11:
        try:
            c_list=list(c)
