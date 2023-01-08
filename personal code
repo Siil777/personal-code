@@ -1,27 +1,30 @@
 Option.1
-
 while True:
-    f=input('code:')
-    if len(f)==11:
+    t=input('code: ')
+    if len(t)==11:
         try:
-            date=f[5]+f[6]
-            month=f[4]+f[3]
-            if f[0]=='1' or f[0]=='2':
-                century='18'
-            elif f[0]=='3' or f[0]=='4':
-                century='19'
-            else:
-                century='20'
-            year=century+f[1]+f[2]
-            print('bithday',f,'s',date+'.'+month+'.'+year)
-            if f[0]=='1' or f[0]=='3' or f[0]=='5':
-                print('man')
-            else:
-                print('woman')
+           if t[0]=='1' or t[0]=='2' or t[0]=='3':
+                print('persons gender: man')
+           elif t[0]=='4' or t[0]=='5' or t[0]=='6':
+                print('person gender: woman')
+           try:
+               date=t[5]+t[6]
+               month=t[4]+t[5]
+               if t[0]=='1' or t[0]=='2':
+                   c='18'
+               elif t[0]=='3' or t[0]=='4':
+                   c='19'
+               else:
+                   c='20'
+               year=c+t[1]+t[2]
+               print('birthday',t,'is',month,'/',date,'/',year)
+           except:
+               print('')
+           pass
         except:
-            print("")
+            print('')
     else:
-        print('it requires no more 11 symbols')
+        print('it has to be only 11 digits')
 
 
 
