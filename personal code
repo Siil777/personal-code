@@ -3,9 +3,9 @@ while True:
     t=input('code: ')
     if len(t)==11:
         try:
-           if t[0]=='1' or t[0]=='2' or t[0]=='3':
+           if t[0]=='1' or t[0]=='3' or t[0]=='5':
                 print('persons gender: man')
-           elif t[0]=='4' or t[0]=='5' or t[0]=='6':
+           elif t[0]=='2' or t[0]=='4' or t[0]=='6':
                 print('person gender: woman')
            try:
                date=t[5]+t[6]
